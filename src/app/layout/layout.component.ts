@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent {
-user=[];
-recievefromchild(data:any){
-this.user=data;
-console.log(data)
-}
+  user: any[] = [];
 
+  recievefromchild(data: any) {
+    this.user.push(data);
+    console.log(this.user);
+  }
 }

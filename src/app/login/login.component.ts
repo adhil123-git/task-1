@@ -9,15 +9,19 @@ export class LoginComponent {
   name = '';
   email = '';
   password = '';
-  @Input()regitereduser : any;
+  @Input() regitereduser: any[] = [];
+
   logIn() {
-    if (this.name === this.regitereduser.name && this.email === this.regitereduser.email && this.password === this.regitereduser.password) {
+    const logindata= this.regitereduser.find(
+      user =>
+        user.name === this.name &&
+        user.email === this.email &&
+        user.password === this.password
+    );
+    if (logindata) {
       alert("login successfull");
-    }
-    else {
-      alert("login failed ")
+    } else {
+      alert("login failed ");
     }
   }
-
-
 }

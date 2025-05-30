@@ -1,4 +1,4 @@
-import { Component,Output,EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -11,15 +11,18 @@ export class RegisterComponent {
   password = '';
   @Output() signindata = new EventEmitter();
 
-SignIn(){
+  SignIn() {
 
-  const data={
-    name:this.name,
-    email:this.email,
-    password:this.password
+    const data = {
+      name: this.name,
+      email: this.email,
+      password: this.password
+    }
+
+    this.signindata.emit(data);
+    alert("signin Successfull")
+    this.name = '';
+    this.email = '';
+    this.password = '';
   }
-
- this.signindata.emit(data);
- alert("signin Successfull")
-}
 }
