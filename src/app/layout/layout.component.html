@@ -1,0 +1,9 @@
+<div class="col-12">
+    <div class="col-6">
+ <app-register (signindata)="recievefromchild($event)"></app-register>
+
+    </div>
+    <div class="col-6">
+        <app-login [regitereduser]="user"></app-login>
+    </div>
+</div>
