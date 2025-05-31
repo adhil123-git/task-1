@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class LayoutComponent {
   user: any[] = [];
 
-  recievefromchild(data: any) {
+ datafromregister(data: any) {
     this.user.push(data);
     console.log(this.user);
   }
