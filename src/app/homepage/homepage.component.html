@@ -1,5 +1,5 @@
-
-<!-- <table mat-table [dataSource]="dataSource" >
+<!-- 
+<table mat-table [dataSource]="dataSource" >
 
   <ng-container  *ngFor ="let columns of userdata "matColumnDef={{columns.name}}>
     <th mat-header-cell *matHeaderCellDef >{{columns.label}}</th>
@@ -8,13 +8,28 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table> -->                 
-<table>
+</table>  -->
+
+
+<div class="card-div">
+  <mat-card *ngFor="let user of dataSource" class="card">
+    <mat-card-header style="font-weight:bold;">Employee Detail</mat-card-header>
+    <mat-card-content *ngFor="let heading of dispalyedheading">{{user[heading]}}</mat-card-content>
+  </mat-card>
+</div>
+
+<div class="card-div">
+  <mat-card  >
+    <mat-card-content *ngFor="let users of nestedarray">{{users |json}}</mat-card-content>
+  </mat-card>
+</div>
+
+
+<!-- <table>
   <tr>
     <th *ngFor="let heading of dispalyedheading"> {{heading}}</th>
   </tr>
   <tr *ngFor ="let user of dataSource">
    <td *ngFor="let heading of dispalyedheading">{{user[heading]}}</td>
   </tr>
-</table>
-
+</table> -->
